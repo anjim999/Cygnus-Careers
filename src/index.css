@@ -1,0 +1,39 @@
+
+@import "tailwindcss";
+
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap');
+
+@theme {
+  --font-sans: 'Outfit', sans-serif;
+
+  --color-dark-bg: #0f1115;
+  --color-dark-card: #181a20;
+  --color-dark-input: #23262f;
+  --color-dark-border: #2b2f38;
+
+  --color-primary: #5c62ec;
+  --color-primary-hover: #474ecc;
+  --color-secondary: #2cc995;
+
+  --color-accent-intern: #ffbc0b;
+  --color-accent-remote: #647dff;
+  --color-accent-contract: #ec5c5c;
+
+  --shadow-glass: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+  
+  --animate-pulse-slow: pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+@layer components {
+  /* Using standard CSS for opacity with hex, or rely on Tailwind utilities.
+     For bg-opacity-80 to work on bg-dark-card, dark-card must support alpha.
+     Tailwind handles this automatically with hex colors in @theme usually.
+  */
+  .glass-panel {
+    @apply bg-dark-card/80 border border-dark-border backdrop-blur-md;
+  }
+  
+  .input-field {
+    @apply bg-dark-input border border-dark-border rounded-xl px-4 py-3 text-white placeholder-gray-500 focus-visible:outline-none focus:border-primary transition-colors duration-200;
+  }
+}

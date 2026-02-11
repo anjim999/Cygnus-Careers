@@ -1,0 +1,120 @@
+
+.job-card {
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 16px;
+  transition: transform 0.3s cubic-bezier(0.25, 0.8, 0.25, 1), box-shadow 0.3s ease;
+  min-height: 220px;
+  cursor: pointer;
+  background: var(--bg-card);
+  border: 1px solid var(--border-color);
+  backdrop-filter: blur(10px);
+}
+
+.job-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+  background: rgba(30, 32, 40, 0.95);
+  border-color: var(--primary);
+}
+
+.job-header {
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+}
+
+.company-logo img {
+  width: 48px;
+  height: 48px;
+  border-radius: 8px;
+  object-fit: cover;
+  border: 1px solid var(--border-color);
+}
+
+.job-info h3 {
+  font-size: 1.25rem;
+  margin-bottom: 4px;
+  color: var(--text-main);
+  font-weight: 600;
+}
+
+.company-name {
+  color: var(--text-secondary);
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+
+.job-details {
+  display: flex;
+  gap: 16px;
+  color: var(--text-secondary);
+  font-size: 0.85rem;
+  margin-top: 8px;
+}
+
+.detail-item {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.job-tags {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  margin-top: auto;
+}
+
+.tag {
+  padding: 4px 12px;
+  border-radius: 20px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.tag.type-internship {
+  background: rgba(255, 188, 11, 0.15);
+  color: var(--accent-intern);
+  border: 1px solid rgba(255, 188, 11, 0.3);
+}
+
+.tag.type-full-time {
+  background: rgba(44, 201, 149, 0.15);
+  color: var(--accent-full);
+  border: 1px solid rgba(44, 201, 149, 0.3);
+}
+
+.tag.type-contract {
+  background: rgba(236, 92, 92, 0.15);
+  color: var(--accent-contract);
+  border: 1px solid rgba(236, 92, 92, 0.3);
+}
+
+.tag.location-tag {
+  background: rgba(100, 125, 255, 0.15);
+  color: var(--accent-remote);
+  border: 1px solid rgba(100, 125, 255, 0.3);
+}
+
+.apply-btn {
+  width: 100%;
+  padding: 10px;
+  margin-top: 16px;
+  border-radius: var(--radius-sm);
+  background: transparent;
+  border: 1px solid var(--border-color);
+  color: var(--text-secondary);
+  font-weight: 500;
+  transition: all 0.2s ease;
+}
+
+.job-card:hover .apply-btn {
+  background: var(--primary);
+  color: white;
+  border-color: var(--primary);
+}
