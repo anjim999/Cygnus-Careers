@@ -1,6 +1,7 @@
 
 import React from 'react';
 import { Link } from 'react-router-dom';
+import toast from 'react-hot-toast';
 
 const HomePage = () => {
   return (
@@ -41,8 +42,15 @@ const HomePage = () => {
             Start Your Search
           </Link>
           <button
-            onClick={() => alert('Employer portal usually requires a backend! Implementation coming in Phase 2.')}
-            className="px-8 py-4 bg-dark-card border border-dark-border text-white text-lg font-bold rounded-full hover:bg-dark-border hover:text-white transition-all hover:scale-105"
+            onClick={() => toast('Employer portal involves backend logic! Coming soon.', {
+              icon: '🚧',
+              style: {
+                borderRadius: '10px',
+                background: '#333',
+                color: '#fff',
+              },
+            })}
+            className="px-8 py-4 bg-dark-card border border-dark-border text-white text-lg font-bold rounded-full hover:bg-dark-border hover:text-white transition-all hover:scale-105 cursor-pointer"
           >
             Post a Job
           </button>

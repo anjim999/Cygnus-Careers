@@ -3,6 +3,7 @@ import React, { useState, useMemo, useEffect } from 'react'
 import { jobs } from '../data/jobs'
 import JobCard from '../components/JobCard'
 import { Link } from 'react-router-dom'
+import { FiSearch, FiChevronDown } from 'react-icons/fi'
 
 function JobsPage() {
   const [searchTerm, setSearchTerm] = useState('')
@@ -80,9 +81,7 @@ function JobsPage() {
             {/* Search Input */}
             <div className="md:col-span-5 relative group">
               <div className="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none">
-                <svg className="w-5 h-5 text-gray-500 group-focus-within:text-primary transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
-                </svg>
+                <FiSearch className="w-5 h-5 text-gray-500 group-focus-within:text-primary transition-colors" />
               </div>
               <input
                 type="text"
@@ -105,9 +104,7 @@ function JobsPage() {
                 <option value="On-site">On-site Only</option>
               </select>
               <div className="absolute inset-y-0 right-0 flex items-center px-4 pointer-events-none">
-                <svg className="w-4 h-4 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 9l-7 7-7-7" />
-                </svg>
+                <FiChevronDown className="w-4 h-4 text-gray-400" />
               </div>
             </div>
 
@@ -123,9 +120,7 @@ function JobsPage() {
                 ))}
               </select>
               <div className="absolute inset-y-0 right-0 flex items-center px-4 pointer-events-none">
-                <svg className="w-4 h-4 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 9l-7 7-7-7" />
-                </svg>
+                <FiChevronDown className="w-4 h-4 text-gray-400" />
               </div>
             </div>
 
@@ -140,9 +135,7 @@ function JobsPage() {
                 <option value="alphabetical">Name (A-Z)</option>
               </select>
               <div className="absolute inset-y-0 right-0 flex items-center px-4 pointer-events-none">
-                <svg className="w-4 h-4 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 9l-7 7-7-7" />
-                </svg>
+                <FiChevronDown className="w-4 h-4 text-gray-400" />
               </div>
             </div>
           </div>
@@ -176,7 +169,7 @@ function JobsPage() {
                   <button
                     onClick={() => handlePageChange(currentPage - 1)}
                     disabled={currentPage === 1}
-                    className="px-4 py-2 rounded-lg bg-dark-input border border-dark-border text-white hover:bg-dark-card disabled:opacity-50 disabled:cursor-not-allowed transition-colors"
+                    className="px-4 py-2 rounded-lg bg-dark-input border border-dark-border text-white hover:bg-dark-card disabled:opacity-50 disabled:cursor-not-allowed transition-colors cursor-pointer"
                   >
                     Previous
                   </button>
@@ -186,7 +179,7 @@ function JobsPage() {
                       <button
                         key={page}
                         onClick={() => handlePageChange(page)}
-                        className={`w-10 h-10 rounded-lg border transition-all duration-200 flex items-center justify-center font-medium ${currentPage === page
+                        className={`w-10 h-10 rounded-lg border transition-all duration-200 flex items-center justify-center font-medium cursor-pointer ${currentPage === page
                           ? 'bg-primary border-primary text-white shadow-[0_0_15px_rgba(92,98,236,0.3)]'
                           : 'bg-dark-input border-dark-border text-gray-400 hover:text-white hover:border-gray-500'
                           }`}
@@ -199,7 +192,7 @@ function JobsPage() {
                   <button
                     onClick={() => handlePageChange(currentPage + 1)}
                     disabled={currentPage === totalPages}
-                    className="px-4 py-2 rounded-lg bg-dark-input border border-dark-border text-white hover:bg-dark-card disabled:opacity-50 disabled:cursor-not-allowed transition-colors"
+                    className="px-4 py-2 rounded-lg bg-dark-input border border-dark-border text-white hover:bg-dark-card disabled:opacity-50 disabled:cursor-not-allowed transition-colors cursor-pointer"
                   >
                     Next
                   </button>
@@ -207,13 +200,13 @@ function JobsPage() {
               )}
             </>
           ) : (
-            <div className="text-center py-20 bg-dark-card/50 rounded-3xl border border-dashed border-dark-border">
-              <div className="text-6xl mb-4">🔍</div>
+            <div className="text-center py-20 bg-dark-card/50 rounded-3xl border border-dashed border-dark-border flex flex-col items-center">
+              <FiSearch className="text-6xl text-gray-600 mb-4" />
               <h3 className="text-2xl font-semibold text-white mb-2">No jobs found</h3>
               <p className="text-gray-400">Try adjusting your search or filters to find what you're looking for.</p>
               <button
                 onClick={() => { setSearchTerm(''); setLocationFilter('All'); setTypeFilter('All'); }}
-                className="mt-6 px-6 py-2 bg-primary text-white rounded-lg hover:bg-primary-hover transition-colors"
+                className="mt-6 px-6 py-2 bg-primary text-white rounded-lg hover:bg-primary-hover transition-colors cursor-pointer"
               >
                 Clear Filters
               </button>
