@@ -2,6 +2,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import toast from 'react-hot-toast';
+import { MdConstruction } from 'react-icons/md';
 
 const HomePage = () => {
   return (
@@ -43,7 +44,7 @@ const HomePage = () => {
           </Link>
           <button
             onClick={() => toast('Employer portal involves backend logic! Coming soon.', {
-              icon: '🚧',
+              icon: <MdConstruction className="text-yellow-500 text-2xl" />,
               style: {
                 borderRadius: '10px',
                 background: '#333',
