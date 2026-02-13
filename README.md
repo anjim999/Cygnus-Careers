@@ -3,6 +3,9 @@
 
 A modern and responsive job listing application built with **React** and **Tailwind CSS**. This project demonstrates frontend fundamentals, component structure, state management, and filtering logic.
 
+## 🌐 Live Demo
+Check out the live application here: [Cygnus Careers](https://cygnus-careers.vercel.app/)
+
 ## ✨ Features
 
 - **Job Browsing:** View a list of job postings with beautiful cards.
@@ -79,8 +82,3 @@ To adhere to the assignment guidelines, here are the assumptions made and potent
 5.  **TypeScript:** Migrate the codebase to TypeScript for better type safety.
 
 ---
-
-### 👨‍💻 Author
-
-**Cygnus Assignment Submission**
-GitHub: [anjim999](https://github.com/anjim999)
