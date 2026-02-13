@@ -1,9 +1,10 @@
-
-import React from 'react';
+import React, { useState } from 'react';
 
 const JobCard = ({ job, searchTerm = '' }) => {
+  const [imageError, setImageError] = useState(false);
+
   const getTypeColor = (type) => {
-    switch(type.toLowerCase()) {
+    switch (type.toLowerCase()) {
       case 'internship': return 'text-accent-intern bg-accent-intern/10 border-accent-intern/20';
       case 'full-time': return 'text-secondary bg-secondary/10 border-secondary/20';
       case 'contract': return 'text-accent-contract bg-accent-contract/10 border-accent-contract/20';
@@ -19,7 +20,7 @@ const JobCard = ({ job, searchTerm = '' }) => {
     const parts = text.split(regex);
     return (
       <span>
-        {parts.map((part, index) => 
+        {parts.map((part, index) =>
           part.toLowerCase() === highlight.toLowerCase() ? (
             <span key={index} className="bg-primary/30 text-white font-bold px-1 rounded-sm">{part}</span>
           ) : (
@@ -35,10 +36,17 @@ const JobCard = ({ job, searchTerm = '' }) => {
       <div className="flex items-start justify-between mb-4">
         <div className="flex items-center gap-4">
           <div className="w-12 h-12 rounded-xl overflow-hidden border border-dark-border group-hover:border-primary/30 transition-colors bg-dark-input flex items-center justify-center">
-            {job.logo ? (
-              <img src={job.logo} alt={job.company} className="w-full h-full object-cover" />
+            {job.logo && !imageError ? (
+              <img
+                src={job.logo}
+                alt={job.company}
+                className="w-full h-full object-cover"
+                onError={() => setImageError(true)}
+              />
             ) : (
-               <div className="text-xl font-bold text-gray-600">{job.company.charAt(0)}</div>
+              <div className="text-xl font-bold text-gray-400 group-hover:text-primary transition-colors">
+                {job.company.charAt(0)}
+              </div>
             )}
           </div>
           <div>

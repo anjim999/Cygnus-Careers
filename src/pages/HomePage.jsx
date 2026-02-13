@@ -25,9 +25,9 @@ const HomePage = () => {
       <main className="flex-grow flex flex-col justify-center items-center text-center px-4 relative z-10 max-w-5xl mx-auto space-y-8">
         <div className="space-y-4">
           <div className="inline-block px-4 py-1.5 rounded-full bg-primary/10 border border-primary/20 text-primary font-semibold text-sm mb-4 animate-bounce-slow">
-            🚀 The #1 Job Board for Developers
+            The #1 Job Board for Developers
           </div>
-          <h1 className="text-6xl md:text-8xl font-bold tracking-tight leading-tight bg-clip-text text-transparent bg-gradient-to-r from-white via-primary-200 to-primary-400">
+          <h1 className="text-6xl md:text-8xl font-bold tracking-tight leading-tight bg-clip-text text-transparent bg-gradient-to-r from-white via-primary/60 to-primary">
             Find Work That <br />
             <span className="text-white">Matters.</span>
           </h1>
@@ -37,12 +37,15 @@ const HomePage = () => {
         </div>
 
         <div className="flex flex-col sm:flex-row gap-4 pt-4">
-          <Link to="/jobs" className="px-8 py-4 bg-primary text-white text-lg font-bold rounded-full hover:bg-primary-hover transition-transform hover:scale-105 shadow-xl shadow-primary/25">
+          <Link to="/jobs" className="px-8 py-4 bg-primary text-white text-lg font-bold rounded-full hover:bg-primary-hover transition-transform hover:scale-105 shadow-xl shadow-primary/25 text-center">
             Start Your Search
           </Link>
-          <a href="#featured" className="px-8 py-4 bg-dark-card border border-dark-border text-white text-lg font-bold rounded-full hover:bg-dark-border hover:text-white transition-all hover:scale-105">
+          <button
+            onClick={() => alert('Employer portal usually requires a backend! Implementation coming in Phase 2.')}
+            className="px-8 py-4 bg-dark-card border border-dark-border text-white text-lg font-bold rounded-full hover:bg-dark-border hover:text-white transition-all hover:scale-105"
+          >
             Post a Job
-          </a>
+          </button>
         </div>
 
         {/* Stats Section */}
@@ -55,18 +58,18 @@ const HomePage = () => {
             <h3 className="text-4xl font-bold text-white">500+</h3>
             <p className="text-sm text-gray-500 uppercase tracking-wider font-semibold">Companies</p>
           </div>
-           <div className="space-y-1">
+          <div className="space-y-1">
             <h3 className="text-4xl font-bold text-white">15k+</h3>
             <p className="text-sm text-gray-500 uppercase tracking-wider font-semibold">Candidates</p>
           </div>
-           <div className="space-y-1">
+          <div className="space-y-1">
             <h3 className="text-4xl font-bold text-white">Global</h3>
             <p className="text-sm text-gray-500 uppercase tracking-wider font-semibold">Remote First</p>
           </div>
         </div>
       </main>
 
-       <footer className="w-full py-8 text-center text-gray-600 text-sm relative z-10">
+      <footer className="w-full py-8 text-center text-gray-600 text-sm relative z-10">
         &copy; {new Date().getFullYear()} Cygnus Job Board. All rights reserved.
       </footer>
     </div>

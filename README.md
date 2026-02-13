@@ -62,6 +62,25 @@ src/
 - **Search Highlighting:** Added a simple regex-based highlighter for better UX.
 - **Glassmorphism:** Used backdrop-filter and semi-transparent backgrounds for a modern feel.
 
+## 📝 Assumptions & Future Improvements
+
+To adhere to the assignment guidelines, here are the assumptions made and potential future enhancements:
+
+### Assumptions
+- **Mock Data:** Since no backend was required, data is static and loaded from a local JSON file (`src/data/jobs.js`).
+- **No Auth:** User authentication was out of scope for this frontend assignment.
+- **Application Flow:** The "Apply" button is currently a placeholder for UI demonstration.
+
+### Future Improvements (With More Time)
+1.  **Backend Integration:** Connect to a real Node.js/Express API with a database (PostgreSQL/MongoDB).
+2.  **Advanced Filtering:** Add filters for salary range, experience level, and date posted.
+3.  **User Accounts:** Allow candidates to save jobs and track applications.
+4.  **Unit Testing:** Implement Jest and React Testing Library for robust test coverage.
+5.  **TypeScript:** Migrate the codebase to TypeScript for better type safety.
+
 ---
 
-Built with ❤️ by [Your Name]
+### 👨‍💻 Author
+
+**Cygnus Assignment Submission**
+GitHub: [anjim999](https://github.com/anjim999)
